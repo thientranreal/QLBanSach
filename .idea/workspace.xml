@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="10406575-4284-4cc0-bb08-66fc77b2e85d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QLBanSach.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BUS/CT_HD_BUS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BUS/HD_BUS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/BUS/ThongKe_BUS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DAO/CT_HD_DAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DAO/HD_DAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DAO/JDBC.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DAO/ThongKe_DAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DTO/CT_HD_Product_DTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DTO/CT_HD_ShowTable_DTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DTO/HD_DTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DTO/ThongKe_DTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/CT_HD_GUI.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/CT_HD_GUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/HoaDon_GUI.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/HoaDon_GUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/ThongKe_GUI.form" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GUI/ThongKe_GUI.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2NAzkJOjTD06zFSEqbdHH7Zy5vz" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/BT/Java/sqljdbc_12.2.0.0_enu/sqljdbc_12.2/enu/mssql-jdbc-12.2.0.jre11.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="10406575-4284-4cc0-bb08-66fc77b2e85d" name="Changes" comment="" />
+      <created>1679121818123</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1679121818123</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/DAO/ThongKe_DAO.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

@@ -1,30 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="10406575-4284-4cc0-bb08-66fc77b2e85d" name="Changes" comment="">
+    <list default="true" id="10406575-4284-4cc0-bb08-66fc77b2e85d" name="Changes" comment="QL ban sach">
       <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/QLBanSach.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BUS/CT_HD_BUS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BUS/HD_BUS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BUS/ThongKe_BUS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DAO/CT_HD_DAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DAO/HD_DAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DAO/JDBC.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DAO/ThongKe_DAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DTO/CT_HD_Product_DTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DTO/CT_HD_ShowTable_DTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DTO/HD_DTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DTO/ThongKe_DTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/CT_HD_GUI.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/CT_HD_GUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/HoaDon_GUI.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/HoaDon_GUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/ThongKe_GUI.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/ThongKe_GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,16 +23,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/BT/Java/sqljdbc_12.2.0.0_enu/sqljdbc_12.2/enu/mssql-jdbc-12.2.0.jre11.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "D:/ProgramData/GitHub/QLBanSach",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -62,6 +42,14 @@
       <option name="presentableId" value="Default" />
       <updated>1679121818123</updated>
     </task>
+    <task id="LOCAL-00001" summary="QL ban sach">
+      <created>1679127479288</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1679127479288</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -74,6 +62,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="QL ban sach" />
+    <option name="LAST_COMMIT_MESSAGE" value="QL ban sach" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

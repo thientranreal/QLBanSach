@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class JDBC {
+
+
     private static Connection con;
 
     public static Connection getCon() {
@@ -33,5 +35,19 @@ public class JDBC {
         } catch (SQLException ex) {
             System.out.println(ex);
         }
+    }
+    public static ResultSet executeQuery(string query,object[] param){
+        PreparedStatement st = con.prepareStatement(query);
+        for(int i =0 ;i < param.length;i++){
+            st.setObject(i,param.get(i));
+        }
+        return st.executeQuery();
+    }
+    public static int executeNonQuery(string query ,object[] param){
+        PreparedStatement st = con.prepareStatement(query);
+        for (int i =0 ; i < param.length;i++){
+            st.setObject(i,param.get(i));
+        }
+        return st.executeUpdate();
     }
 }

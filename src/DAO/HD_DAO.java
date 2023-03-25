@@ -14,14 +14,11 @@ public class HD_DAO {
         ArrayList<HD_DTO> result = new ArrayList<>();
 
         try {
-            Connection con = JDBC.getCon();
             String sql = "Select MaHD, KhachHang.MaKH CusID, NhanVien.MaNV EmID" +
                     ", NgayXuat, KhachHang.HoTen CusName, NhanVien.HoTen EmName " +
                     "From HoaDon, KhachHang, NhanVien " +
                     "Where KhachHang.MaKH = HoaDon.MaKH and NhanVien.MaNV = HoaDon.MaNV";
-            PreparedStatement st = con.prepareStatement(sql);
-
-            ResultSet rs = st.executeQuery();
+            ResultSet rs = JDBC.executeQuery(sql);
             while (rs.next()) {
                 result.add(new HD_DTO(rs.getString("MaHD"),
                         rs.getString("EmID"),
@@ -44,15 +41,9 @@ public class HD_DAO {
         int updatedRows = 0;
 
         try {
-            Connection con = JDBC.getCon();
+            
             String sql = "Insert Into HoaDon Values (?, ?, ?, ?)";
-            PreparedStatement st = con.prepareStatement(sql);
-            st.setString(1, OrderId);
-            st.setString(2, cusId);
-            st.setString(3, emId);
-            st.setString(4, dateTime);
-
-            updatedRows = st.executeUpdate();
+            updatedRows = JDBC.executeNonQuery(sql,new object[]{OrderId,cusId,emId,dateTime});
 
         } catch (SQLException e) {
             System.out.println("Không lấy được dữ liệu");
@@ -68,11 +59,8 @@ public class HD_DAO {
         ArrayList<String> result = new ArrayList<>();
 
         try {
-            Connection con = JDBC.getCon();
             String sql = "Select MaNV, HoTen From NhanVien";
-            PreparedStatement st = con.prepareStatement(sql);
-
-            ResultSet rs = st.executeQuery();
+            ResultSet rs = JDBC.executeQuery(sql);
             while (rs.next()) {
                 result.add(rs.getString("MaNV") + ":" + rs.getNString("HoTen"));
             }
@@ -89,11 +77,9 @@ public class HD_DAO {
         ArrayList<String> result = new ArrayList<>();
 
         try {
-            Connection con = JDBC.getCon();
+   
             String sql = "Select MaKH, HoTen From KhachHang";
-            PreparedStatement st = con.prepareStatement(sql);
-
-            ResultSet rs = st.executeQuery();
+            ResultSet rs = JDBC.executeQuery(sql);
             while (rs.next()) {
                 result.add(rs.getString("MaKH") + ":" + rs.getNString("HoTen"));
             }
@@ -111,12 +97,9 @@ public class HD_DAO {
         int updatedRows = 0;
 
         try {
-            Connection con = JDBC.getCon();
+            
             String sql = "Delete From HoaDon Where MaHD = ?";
-            PreparedStatement st = con.prepareStatement(sql);
-            st.setString(1, OrderId);
-
-            updatedRows = st.executeUpdate();
+            updatedRows = JDBC.executeNonQuery(sql,new object[]{OrderId});
 
         } catch (SQLException e) {
             System.out.println("Không lấy được dữ liệu");
@@ -132,16 +115,10 @@ public class HD_DAO {
         int updatedRows = 0;
 
         try {
-            Connection con = JDBC.getCon();
             String sql = "Update HoaDon Set MaKH = ?, MaNV = ?, NgayXuat = ? " +
                     "Where MaHD = ?";
-            PreparedStatement st = con.prepareStatement(sql);
-            st.setString(1, CusId);
-            st.setString(2, EmId);
-            st.setString(3, orderDate);
-            st.setString(4, OrderId);
 
-            updatedRows = st.executeUpdate();
+            updatedRows = JDBC.executeNonQuery(sql,new object[]{CusId,EmId,orderDate,OrderId});
 
         } catch (SQLException e) {
             System.out.println("Không lấy được dữ liệu");

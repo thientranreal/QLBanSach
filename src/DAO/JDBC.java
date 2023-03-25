@@ -6,13 +6,10 @@ import java.sql.SQLException;
 
 public class JDBC {
 
+    public JDBC(){
 
-    private static Connection con;
-
-    public static Connection getCon() {
-        return con;
     }
-
+    private static Connection con;
     public static boolean openConnection() {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -36,17 +33,21 @@ public class JDBC {
             System.out.println(ex);
         }
     }
-    public static ResultSet executeQuery(string query,object[] param){
+    public static ResultSet executeQuery(string query,object[] param=null){
         PreparedStatement st = con.prepareStatement(query);
-        for(int i =0 ;i < param.length;i++){
-            st.setObject(i,param.get(i));
+        if(param !=null){
+            for(int i =0 ;i < param.length;i++){
+               st.setObject(i+1,param.get(i));
+            }
         }
         return st.executeQuery();
     }
-    public static int executeNonQuery(string query ,object[] param){
+    public static int executeNonQuery(string query ,object[] param=null){
         PreparedStatement st = con.prepareStatement(query);
-        for (int i =0 ; i < param.length;i++){
-            st.setObject(i,param.get(i));
+        if(param !=null){
+            for(int i =0 ;i < param.length;i++){
+               st.setObject(i+1,param.get(i));
+            }
         }
         return st.executeUpdate();
     }

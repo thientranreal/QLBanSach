@@ -15,7 +15,7 @@ public class CT_HD_DAO {
         ArrayList<CT_HD_ShowTable_DTO> list = new ArrayList<>();
 
         try {
-            Connection con = JDBC.getCon();
+            
             String sql = "Select HoaDon.MaHD, KhachHang.MaKH, KhachHang.HoTen CustomerName, "+
                     "Sach.MaSach, Sach.TenSach ProductName, SL_Mua, Gia" +
                     " from CT_HD, HoaDon, KhachHang, Sach " +
@@ -23,9 +23,7 @@ public class CT_HD_DAO {
                     "and HoaDon.MaKH = KhachHang.MaKH " +
                     "and CT_HD.MaSach = Sach.MaSach " +
                     "and HoaDon.MaHD = ?";
-            PreparedStatement st = con.prepareStatement(sql);
-            st.setString(1, orderID);
-            ResultSet rs = st.executeQuery();
+            ResultSet rs = JDBC.executeQuery(sql,new object[orderID]{})
 
             // add each row to arrayList
             CT_HD_ShowTable_DTO ct;
@@ -53,12 +51,9 @@ public class CT_HD_DAO {
         ArrayList<CT_HD_Product_DTO> result = new ArrayList<>();
 
         try {
-            Connection con = JDBC.getCon();
             String sql = "Select MaSach, TenSach, TheLoai, SL from Sach";
-            PreparedStatement st = con.prepareStatement(sql);
-
-            ResultSet rs = st.executeQuery();
-            while (rs.next()) {
+            ResultSet rs = JDBC.executeQuery(sql)
+            while (rs.next()){
                 result.add(new CT_HD_Product_DTO(rs.getString("MaSach"),
                         rs.getNString("TenSach"),
                         rs.getNString("TheLoai"),
@@ -78,14 +73,11 @@ public class CT_HD_DAO {
         JDBC.openConnection();
         String result = "";
         try {
-            Connection con = JDBC.getCon();
             String sql = "Select DiaChi, SoDT " +
                     "from KhachHang " +
                     "where MaKH = ?";
-            PreparedStatement st = con.prepareStatement(sql);
-            st.setString(1, customerId);
 
-            ResultSet rs = st.executeQuery();
+            ResultSet rs = JDBC.executeQuery(query,new object[]{customerId});
             while (rs.next()) {
                 result += rs.getString("DiaChi") + ":" + rs.getString("SoDT");
             }
@@ -103,13 +95,9 @@ public class CT_HD_DAO {
         int updatedRows = 0;
 
         try {
-            Connection con = JDBC.getCon();
+            
             String sql = "Update CT_HD Set SL_Mua = ? Where MaHD = ? and MaSach = ?";
-            PreparedStatement st = con.prepareStatement(sql);
-            st.setInt(1, sl);
-            st.setString(2, OrderId);
-            st.setString(3, proId);
-            updatedRows = st.executeUpdate();
+            updatedRows = JDBC.executeNonQuery(sql,new object[]{sl,OrderId,proId});
 
         } catch (SQLException e) {
             System.out.println("Không lấy được dữ liệu");
@@ -125,14 +113,9 @@ public class CT_HD_DAO {
         int updatedRows = 0;
 
         try {
-            Connection con = JDBC.getCon();
             String sql = "Insert Into CT_HD Values (?, ?, ?)";
-            PreparedStatement st = con.prepareStatement(sql);
-            st.setString(1, OrderId);
-            st.setString(2, proId);
-            st.setInt(3, sl);
-
-            updatedRows = st.executeUpdate();
+            
+            updatedRows =JDBC.executeNonQuery(sql,new object[]{OrderId,proId,sl});
 
         } catch (SQLException e) {
             System.out.println("Không lấy được dữ liệu");
@@ -147,12 +130,8 @@ public class CT_HD_DAO {
         int updatedRows = 0;
 
         try {
-            Connection con = JDBC.getCon();
             String sql = "Update Sach Set SL = ? Where MaSach = ?";
-            PreparedStatement st = con.prepareStatement(sql);
-            st.setInt(1, stock);
-            st.setString(2, proId);
-            updatedRows = st.executeUpdate();
+            updatedRows = JDBC.executeNonQuery(sql,new object[]{stock,proId});
 
         } catch (SQLException e) {
             System.out.println("Không lấy được dữ liệu");
@@ -167,13 +146,8 @@ public class CT_HD_DAO {
         int updatedRows = 0;
 
         try {
-            Connection con = JDBC.getCon();
             String sql = "Delete From CT_HD Where MaHD = ? and MaSach = ?";
-            PreparedStatement st = con.prepareStatement(sql);
-            st.setString(1, OrderId);
-            st.setString(2, proId);
-
-            updatedRows = st.executeUpdate();
+            updatedRows =JDBC.executeNonQuery(sql,new object[]{OrderId,proId});
 
         } catch (SQLException e) {
             System.out.println("Không lấy được dữ liệu");
@@ -189,12 +163,8 @@ public class CT_HD_DAO {
         int updatedRows = 0;
 
         try {
-            Connection con = JDBC.getCon();
             String sql = "Delete From CT_HD Where MaHD = ?";
-            PreparedStatement st = con.prepareStatement(sql);
-            st.setString(1, OrderId);
-
-            updatedRows = st.executeUpdate();
+            updatedRows = JDBC.executeNonQuery(sql,new object[]{OrderId});
 
         } catch (SQLException e) {
             System.out.println("Không lấy được dữ liệu");

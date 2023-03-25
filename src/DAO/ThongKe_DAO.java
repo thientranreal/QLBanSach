@@ -1,9 +1,6 @@
 package DAO;
 
 import DTO.ThongKe_DTO;
-
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -15,7 +12,7 @@ public class ThongKe_DAO {
 
         try {
             String sql = "Select MaSach, TenSach From Sach";
-            ResultSet rs = JDBC.executeQuery(sql);
+            ResultSet rs = JDBC.executeQuery(sql,new Object[]{});
             while (rs.next()) {
                 result.add(rs.getString("MaSach") + ":" + rs.getNString("TenSach"));
             }
@@ -39,7 +36,7 @@ public class ThongKe_DAO {
                     "Where OD.MaSach = P.MaSach And O.MaHD = OD.MaHD And Convert(Date, NgayXuat) BETWEEN CAST(? AS DATE) AND CAST(? AS DATE)\n" +
                     "Group By P.MaSach, TenSach, Gia";
    
-            ResultSet rs = JDBC.executeQuery(sql,new object[]{fromDate,toDate});
+            ResultSet rs = JDBC.executeQuery(sql,new Object[]{fromDate,toDate});
             while (rs.next()) {
                 result.add(new ThongKe_DTO(rs.getString("MaSach"),
                         rs.getNString("TenSach"),
@@ -69,7 +66,7 @@ public class ThongKe_DAO {
                     "Group By P.MaSach, TenSach, Gia";
      
 
-            ResultSet rs = JDBC.executeQuery(sql,new object[]{fromDate,toDate,proId});
+            ResultSet rs = JDBC.executeQuery(sql,new Object[]{fromDate,toDate,proId});
             while (rs.next()) {
                 result.add(new ThongKe_DTO(rs.getString("MaSach"),
                         rs.getNString("TenSach"),

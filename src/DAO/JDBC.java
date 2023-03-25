@@ -1,9 +1,5 @@
 package DAO;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-
+import java.sql.*;
 public class JDBC {
 
     public JDBC(){
@@ -33,22 +29,33 @@ public class JDBC {
             System.out.println(ex);
         }
     }
-    public static ResultSet executeQuery(string query,object[] param=null){
+    public static ResultSet executeQuery(String query,Object[] param){
+       try{ 
         PreparedStatement st = con.prepareStatement(query);
-        if(param !=null){
+        if(param !=null ){
             for(int i =0 ;i < param.length;i++){
-               st.setObject(i+1,param.get(i));
+               st.setObject(i+1,param[i]);
             }
         }
         return st.executeQuery();
+       }
+        catch(SQLException ex){
+            System.out.println(ex);
+            return null;
+        }
     }
-    public static int executeNonQuery(string query ,object[] param=null){
+    public static int executeNonQuery(String query ,Object[] param){
+       try{
         PreparedStatement st = con.prepareStatement(query);
         if(param !=null){
             for(int i =0 ;i < param.length;i++){
-               st.setObject(i+1,param.get(i));
+               st.setObject(i+1,param[i]);
             }
         }
         return st.executeUpdate();
+       }catch(SQLException ex){
+           System.out.println(ex);
+           return -1;
+       }
     }
 }

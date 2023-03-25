@@ -72,9 +72,7 @@ public class HD_DAO {
     public ArrayList<String> getAllCus() {
         JDBC.openConnection();
         ArrayList<String> result = new ArrayList<>();
-
         try {
-   
             String sql = "Select MaKH, HoTen From KhachHang";
             ResultSet rs = JDBC.executeQuery(sql,new Object[]{});
             while (rs.next()) {
@@ -84,7 +82,6 @@ public class HD_DAO {
             System.out.println("Không lấy được dữ liệu");
             return null;
         }
-
         JDBC.closeConnection();
         return result;
     }
@@ -92,17 +89,13 @@ public class HD_DAO {
     public int deleteOrder(String OrderId) {
         JDBC.openConnection();
         int updatedRows = 0;
-
         try {
-            
             String sql = "Delete From HoaDon Where MaHD = ?";
             updatedRows = JDBC.executeNonQuery(sql,new Object[]{OrderId});
-
         } catch (Exception e) {
             System.out.println("Không lấy được dữ liệu");
             return updatedRows;
         }
-
         JDBC.closeConnection();
         return updatedRows;
     }

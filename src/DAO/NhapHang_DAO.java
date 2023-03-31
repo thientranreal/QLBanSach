@@ -8,27 +8,27 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-public class HD_DAO {
+public class NhapHang_DAO {
     public ArrayList<HD_DTO> getAllOrders() {
         JDBC.openConnection();
         ArrayList<HD_DTO> result = new ArrayList<>();
 
         try {
             Connection con = JDBC.getCon();
-            String sql = "Select MaHD, KhachHang.MaKH CusID, NhanVien.MaNV EmID" +
-                    ", NgayXuat, KhachHang.HoTen CusName, NhanVien.HoTen EmName " +
-                    "From HoaDon, KhachHang, NhanVien " +
-                    "Where KhachHang.MaKH = HoaDon.MaKH and NhanVien.MaNV = HoaDon.MaNV";
+            String sql = "Select MaNH, KhachHang.MaKH CusID, NhanVien.MaNV EmID" +
+                    ", NgayNhap, KhachHang.HoTen CusName, NhanVien.HoTen EmName " +
+                    "From NhapHang, KhachHang, NhanVien " +
+                    "Where KhachHang.MaKH = NhapHang.MaKH and NhanVien.MaNV = NhapHang.MaNV";
             PreparedStatement st = con.prepareStatement(sql);
 
             ResultSet rs = st.executeQuery();
             while (rs.next()) {
-                result.add(new HD_DTO(rs.getString("MaHD"),
+                result.add(new HD_DTO(rs.getString("MaNH"),
                         rs.getString("EmID"),
                         rs.getNString("EmName"),
                         rs.getString("CusID"),
                         rs.getNString("CusName"),
-                        rs.getString("NgayXuat")));
+                        rs.getString("NgayNhap")));
             }
         } catch (SQLException e) {
             System.out.println("Không lấy được dữ liệu");
@@ -45,7 +45,7 @@ public class HD_DAO {
 
         try {
             Connection con = JDBC.getCon();
-            String sql = "Insert Into HoaDon Values (?, ?, ?, ?)";
+            String sql = "Insert Into NhapHang Values (?, ?, ?, ?)";
             PreparedStatement st = con.prepareStatement(sql);
             st.setString(1, OrderId);
             st.setString(2, cusId);
@@ -112,7 +112,7 @@ public class HD_DAO {
 
         try {
             Connection con = JDBC.getCon();
-            String sql = "Delete From HoaDon Where MaHD = ?";
+            String sql = "Delete From NhapHang Where MaNH = ?";
             PreparedStatement st = con.prepareStatement(sql);
             st.setString(1, OrderId);
 
@@ -133,8 +133,8 @@ public class HD_DAO {
 
         try {
             Connection con = JDBC.getCon();
-            String sql = "Update HoaDon Set MaKH = ?, MaNV = ?, NgayXuat = ? " +
-                    "Where MaHD = ?";
+            String sql = "Update NhapHang Set MaKH = ?, MaNV = ?, NgayNhap = ? " +
+                    "Where MaNH = ?";
             PreparedStatement st = con.prepareStatement(sql);
             st.setString(1, CusId);
             st.setString(2, EmId);
@@ -158,12 +158,12 @@ public class HD_DAO {
 
         try {
             Connection con = JDBC.getCon();
-            String sql = "Delete From CT_HD Where MaHD = ?";
+            String sql = "Delete From CT_Nhap Where MaNH = ?";
             PreparedStatement st = con.prepareStatement(sql);
             st.setString(1, OrderId);
             st.executeUpdate();
 
-            sql = "Delete From HoaDon Where MaHD = ?";
+            sql = "Delete From NhapHang Where MaNH = ?";
             st = con.prepareStatement(sql);
             st.setString(1, OrderId);
 

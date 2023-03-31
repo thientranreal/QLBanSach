@@ -1,12 +1,13 @@
 package BUS;
 
 import DAO.HD_DAO;
+import DAO.NhapHang_DAO;
 import DTO.HD_DTO;
 
 import java.util.ArrayList;
 
-public class HD_BUS {
-    private static HD_DAO hdDao = new HD_DAO();
+public class NhapHang_BUS {
+    private static NhapHang_DAO hdDao = new NhapHang_DAO();
     public ArrayList<HD_DTO> getAllOrders() {
         return hdDao.getAllOrders();
     }

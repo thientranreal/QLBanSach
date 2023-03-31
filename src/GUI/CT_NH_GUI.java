@@ -1,6 +1,7 @@
 package GUI;
 
 import BUS.CT_HD_BUS;
+import BUS.CT_NH_BUS;
 import DTO.CT_HD_Product_DTO;
 import DTO.CT_HD_ShowTable_DTO;
 
@@ -16,7 +17,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class CT_HD_GUI {
+public class CT_NH_GUI {
     private JPanel CT_HD_panel;
     private JPanel header;
     private JPanel TTChung;
@@ -70,12 +71,12 @@ public class CT_HD_GUI {
     private JPanel Button_Pnl;
     private static ArrayList<CT_HD_ShowTable_DTO> list;
     private static ArrayList<CT_HD_Product_DTO> products;
-    private static CT_HD_BUS busCTHD = new CT_HD_BUS();
+    private static CT_NH_BUS busCTHD = new CT_NH_BUS();
     private ArrayList<CT_HD_Product_DTO> productsTemp;
 
-    public CT_HD_GUI(String orderID, String emId, String emName, String cusId, String cusName, String orderDate, JFrame fatherFrame) {
+    public CT_NH_GUI(String orderID, String emId, String emName, String cusId, String cusName, String orderDate, JFrame fatherFrame) {
         fatherFrame.setVisible(false);
-        JFrame frame = new JFrame("Quản lý chi tiết đơn hàng");
+        JFrame frame = new JFrame("Quản lý chi tiết nhập hàng");
 
 //      Add window closing event
         frame.addWindowListener(new WindowAdapter() {
@@ -125,9 +126,9 @@ public class CT_HD_GUI {
         product_price_txt.setEditable(false);
 
         // add columns for JTable
-        String[] columns = {"Mã HD", "Mã khách hàng",
+        String[] columns = {"Mã nhập hàng", "Mã khách hàng",
                 "Tên khách hàng", "Mã sản phẩm",
-                "Tên sản phẩm", "Số lượng mua", "Đơn giá"};
+                "Tên sản phẩm", "Số lượng nhập", "Đơn giá"};
         DefaultTableModel model = new DefaultTableModel(null, columns);
 
         // get CT_HD by orderID and show to JTable
@@ -241,9 +242,9 @@ public class CT_HD_GUI {
                 }
 
                 // check if that product is still available or not
-                int slConLai = Integer.parseInt(stock_txt.getText()) - sl;
+                int slConLai = Integer.parseInt(stock_txt.getText()) - (-sl);
                 if (slConLai < 0) {
-                    JOptionPane.showMessageDialog(frame, "Số lượng kho không đủ", "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(frame, "Số lượng nhập không hợp lệ", "Error", JOptionPane.ERROR_MESSAGE);
                     product_quantity_txt.grabFocus();
                     return;
                 }
@@ -261,7 +262,7 @@ public class CT_HD_GUI {
                         }
                     }
                     if (sl < 0 && -sl >= slHienTai && slHienTai != -99999) {
-                        JOptionPane.showMessageDialog(frame, "Số lượng cần giảm vượt quá hoặc bằng số lượng mua",
+                        JOptionPane.showMessageDialog(frame, "Số lượng cần giảm vượt quá hoặc bằng số lượng nhập",
                                 "Error", JOptionPane.ERROR_MESSAGE);
                         product_quantity_txt.grabFocus();
                         return;
@@ -327,7 +328,7 @@ public class CT_HD_GUI {
                 int sl = Integer.parseInt(stock_txt.getText());
                 for (CT_HD_ShowTable_DTO item : list) {
                     if (item.getProductID().equals(product_id_txt.getText())) {
-                        sl = sl + item.getQuantity();
+                        sl = sl - item.getQuantity();
                         break;
                     }
                 }

@@ -1,6 +1,7 @@
 package GUI;
 
 import BUS.HD_BUS;
+import BUS.NhapHang_BUS;
 import DTO.HD_DTO;
 
 import javax.swing.*;
@@ -15,7 +16,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.ArrayList;
 
-public class HoaDon_GUI {
+public class NhapHang_GUI {
     private JPanel HoaDon_panel;
     private JLabel title_lb;
     private JPanel title_panel;
@@ -68,15 +69,15 @@ public class HoaDon_GUI {
     private static ArrayList<HD_DTO> hoaDonList;
     private static ArrayList<String> employees;
     private static ArrayList<String> customers;
-    private static HD_BUS hdBus = new HD_BUS();
+    private static NhapHang_BUS hdBus = new NhapHang_BUS();
     private ArrayList<HD_DTO> hoaDonListTemp;
     private ArrayList<String> employeesTemp;
     private ArrayList<String> customersTemp;
     private static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
     private static DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 
-    public HoaDon_GUI() {
-        JFrame frame = new JFrame("Quản lý hóa đơn");
+    public NhapHang_GUI() {
+        JFrame frame = new JFrame("Quản lý nhập hàng");
         frame.add(HoaDon_panel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -106,8 +107,8 @@ public class HoaDon_GUI {
         loadEmResultList(sEm_result, employees);
         loadCusResultList(sCus_result, customers);
 //        Show hoaDonList to JTable
-        String[] columns = {"Mã hóa đơn", "Mã nhân viên", "Tên nhân viên",
-                "Mã khách hàng", "Tên khách hàng", "Ngày giờ đặt"};
+        String[] columns = {"Mã nhập hàng", "Mã nhân viên", "Tên nhân viên",
+                "Mã khách hàng", "Tên khách hàng", "Ngày giờ nhập"};
         loadTableModel(HoaDon_table, columns, hoaDonList);
 
 
@@ -212,7 +213,7 @@ public class HoaDon_GUI {
                     String cusId = HoaDon_table.getValueAt(row, 3).toString();
                     String cusName = HoaDon_table.getValueAt(row, 4).toString();
                     String orderDate = HoaDon_table.getValueAt(row, 5).toString();
-                    new CT_HD_GUI(orderId, emId, emName, cusId, cusName, orderDate, frame);
+                    new CT_NH_GUI(orderId, emId, emName, cusId, cusName, orderDate, frame);
                 }
             }
         });

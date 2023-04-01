@@ -128,7 +128,7 @@ public class CT_NH_GUI {
         // add columns for JTable
         String[] columns = {"Mã nhập hàng", "Mã khách hàng",
                 "Tên khách hàng", "Mã sản phẩm",
-                "Tên sản phẩm", "Số lượng nhập", "Đơn giá"};
+                "Tên sản phẩm", "Số lượng nhập", "Đơn giá nhập"};
         DefaultTableModel model = new DefaultTableModel(null, columns);
 
         // get CT_HD by orderID and show to JTable

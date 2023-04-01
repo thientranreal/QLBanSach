@@ -17,7 +17,7 @@ public class CT_NH_DAO {
         try {
             Connection con = JDBC.getCon();
             String sql = "Select NhapHang.MaNH, KhachHang.MaKH, KhachHang.HoTen CustomerName, "+
-                    "Sach.MaSach, Sach.TenSach ProductName, SL_Nhap, Gia" +
+                    "Sach.MaSach, Sach.TenSach ProductName, SL_Nhap, GiaNhap" +
                     " from CT_Nhap, NhapHang, KhachHang, Sach " +
                     "Where CT_Nhap.MaNH = NhapHang.MaNH " +
                     "and NhapHang.MaKH = KhachHang.MaKH " +
@@ -37,7 +37,7 @@ public class CT_NH_DAO {
                 ct.setProductID(rs.getString("MaSach"));
                 ct.setProductName(rs.getNString("ProductName"));
                 ct.setQuantity(rs.getInt("SL_Nhap"));
-                ct.setPrice(rs.getFloat("Gia"));
+                ct.setPrice(rs.getFloat("GiaNhap"));
                 list.add(ct);
             }
         } catch (SQLException ex) {

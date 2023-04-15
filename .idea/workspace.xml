@@ -5,21 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="10406575-4284-4cc0-bb08-66fc77b2e85d" name="Changes" comment="QL ban sach">
-      <change afterPath="$PROJECT_DIR$/src/BUS/CT_NH_BUS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BUS/NhapHang_BUS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DAO/CT_NH_DAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DAO/NhapHang_DAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/CT_NH_GUI.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/CT_NH_GUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/NhapHang_GUI.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/GUI/NhapHang_GUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BUS/HD_BUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUS/HD_BUS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DAO/HD_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/HD_DAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DAO/JDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/JDBC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GUI/CT_HD_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/CT_HD_GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/HoaDon_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/HoaDon_GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/NhapHang_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/NhapHang_GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/ThongKe_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/ThongKe_GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +40,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/Programs/GitHubProject/QLBanSach/src/GUI",
+    "last_opened_file_path": "D:/BT/Java/sqljdbc_12.2.0.0_enu/sqljdbc_12.2/enu/mssql-jdbc-12.2.0.jre11.jar",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"

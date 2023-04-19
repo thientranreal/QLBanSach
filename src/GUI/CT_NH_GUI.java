@@ -466,11 +466,15 @@ public class CT_NH_GUI {
         total_price_txt.setText(String.format("%,.2f", tinhThanhTien()));
     }
     private float tinhThanhTien() {
-        float sum = 0;
-        for (CT_HD_ShowTable_DTO item : list) {
-            sum += item.getPrice() * item.getQuantity();
+        try {
+            float sum = 0;
+            for (CT_HD_ShowTable_DTO item : list) {
+                sum += item.getPrice() * item.getQuantity();
+            }
+            return sum;
+        } catch (Exception ex) {
+            return 0;
         }
-        return sum;
     }
     // check if product exist in Order Detail
     private boolean isProductExistInOrder(String proId) {

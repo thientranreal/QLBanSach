@@ -500,10 +500,6 @@ public class NhapHang_GUI {
     public JPanel getNhapHang_pnl() {
         return HoaDon_panel;
     }
-
-    public JPanel getHoaDon_panel() {
-        return HoaDon_panel;
-    }
     //    Load Hoa Don to hoaDonList
     private void loadHoaDonList() {
         hoaDonList = hdBus.getAllOrders();

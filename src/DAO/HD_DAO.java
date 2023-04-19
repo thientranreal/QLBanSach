@@ -17,8 +17,9 @@ public class HD_DAO {
             Connection con = JDBC.getCon();
             String sql = "Select MaHD, KhachHang.MaKH CusID, NhanVien.MaNV EmID" +
                     ", NgayXuat, KhachHang.HoTen CusName, NhanVien.HoTen EmName " +
-                    "From HoaDon, KhachHang, NhanVien " +
-                    "Where KhachHang.MaKH = HoaDon.MaKH and NhanVien.MaNV = HoaDon.MaNV";
+                    "From HoaDon " +
+                    "Left join KhachHang ON HoaDon.MaKH = KhachHang.MaKH " +
+                    "Left join NhanVien ON NhanVien.MaNV = HoaDon.MaNV";
             PreparedStatement st = con.prepareStatement(sql);
 
             ResultSet rs = st.executeQuery();

@@ -208,10 +208,27 @@ public class NhapHang_GUI {
                 if (e.getClickCount() == 2) {
                     int row = HoaDon_table.getSelectedRow();
                     String orderId = HoaDon_table.getValueAt(row, 0).toString();
-                    String emId = HoaDon_table.getValueAt(row, 1).toString();
-                    String emName = HoaDon_table.getValueAt(row, 2).toString();
-                    String cusId = HoaDon_table.getValueAt(row, 3).toString();
-                    String cusName = HoaDon_table.getValueAt(row, 4).toString();
+                    String emId, emName, cusId, cusName;
+                    try {
+                        emId = HoaDon_table.getValueAt(row, 1).toString();
+                    } catch (NullPointerException ex) {
+                        emId = "";
+                    }
+                    try {
+                        emName = HoaDon_table.getValueAt(row, 2).toString();
+                    } catch (NullPointerException ex) {
+                        emName = "";
+                    }
+                    try {
+                        cusId = HoaDon_table.getValueAt(row, 3).toString();
+                    } catch (NullPointerException ex) {
+                        cusId = "";
+                    }
+                    try {
+                        cusName = HoaDon_table.getValueAt(row, 4).toString();
+                    } catch (NullPointerException ex) {
+                        cusName = "";
+                    }
                     String orderDate = HoaDon_table.getValueAt(row, 5).toString();
                     new CT_NH_GUI(orderId, emId, emName, cusId, cusName, orderDate, frame);
                 }

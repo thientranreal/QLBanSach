@@ -17,12 +17,11 @@ public class CT_NH_DAO {
         try {
             Connection con = JDBC.getCon();
             String sql = "Select NhapHang.MaNH, KhachHang.MaKH, KhachHang.HoTen CustomerName, "+
-                    "Sach.MaSach, Sach.TenSach ProductName, SL_Nhap, GiaNhap" +
-                    " from CT_Nhap, NhapHang, KhachHang, Sach " +
-                    "Where CT_Nhap.MaNH = NhapHang.MaNH " +
-                    "and NhapHang.MaKH = KhachHang.MaKH " +
-                    "and CT_Nhap.MaSach = Sach.MaSach " +
-                    "and NhapHang.MaNH = ?";
+                    "Sach.MaSach, Sach.TenSach ProductName, SL_Nhap, GiaNhap " +
+                    "from CT_Nhap join NhapHang On CT_Nhap.MaNH = NhapHang.MaNH " +
+                    "Left Join KhachHang On NhapHang.MaKH = KhachHang.MaKH " +
+                    "Join Sach On CT_Nhap.MaSach = Sach.MaSach " +
+                    "Where NhapHang.MaNH = ?";
             PreparedStatement st = con.prepareStatement(sql);
             st.setString(1, orderID);
             ResultSet rs = st.executeQuery();

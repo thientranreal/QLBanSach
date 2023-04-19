@@ -17,7 +17,7 @@ public class JDBC {
             String connectionStr = "jdbc:sqlserver://localhost:1433;"+
                     "databaseName=BookStore;"+
                     "user=sa;"+
-                    "password=123456;"+
+                    "password=12345;"+
                     "encrypt=true;trustServerCertificate=true";
             con = DriverManager.getConnection(connectionStr);
             return true;

@@ -108,8 +108,13 @@ public class CT_HD_GUI {
         emp_name_txt.setText(emName);
         cus_id_txt.setText(cusId);
         cus_name_txt.setText(cusName);
-        cus_address_txt.setText(chiTiet[0]);
-        cus_phone_txt.setText(chiTiet[1]);
+        try {
+            cus_address_txt.setText(chiTiet[0]);
+            cus_phone_txt.setText(chiTiet[1]);
+        } catch (ArrayIndexOutOfBoundsException ex) {
+            cus_address_txt.setText("N/A");
+            cus_phone_txt.setText("N/A");
+        }
 
         // text field read only
         order_date_txt.setEditable(false);

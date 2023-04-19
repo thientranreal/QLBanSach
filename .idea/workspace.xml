@@ -4,11 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="10406575-4284-4cc0-bb08-66fc77b2e85d" name="Changes" comment="QL ban sach">
+    <list default="true" id="10406575-4284-4cc0-bb08-66fc77b2e85d" name="Changes" comment="add try catch">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BUS/CT_HD_BUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUS/CT_HD_BUS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BUS/CT_NH_BUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUS/CT_NH_BUS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BUS/HD_BUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUS/HD_BUS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BUS/NhapHang_BUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUS/NhapHang_BUS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BUS/ThongKe_BUS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BUS/ThongKe_BUS.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/CT_HD_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/CT_HD_DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/CT_NH_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/CT_NH_DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/HD_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/HD_DAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DAO/JDBC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/JDBC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/NhapHang_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/NhapHang_DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DAO/ThongKe_DAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/ThongKe_DAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DTO/CT_HD_Product_DTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DTO/CT_HD_Product_DTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DTO/CT_HD_ShowTable_DTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DTO/CT_HD_ShowTable_DTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DTO/HD_DTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DTO/HD_DTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DTO/ThongKe_DTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DTO/ThongKe_DTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/CT_HD_GUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/CT_HD_GUI.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/CT_HD_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/CT_HD_GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/CT_NH_GUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/CT_NH_GUI.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/CT_NH_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/CT_NH_GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/HoaDon_GUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/HoaDon_GUI.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/HoaDon_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/HoaDon_GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/NhapHang_GUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/NhapHang_GUI.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/NhapHang_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/NhapHang_GUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/ThongKe_GUI.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/ThongKe_GUI.form" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GUI/ThongKe_GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/ThongKe_GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -40,7 +61,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/BT/Java/sqljdbc_12.2.0.0_enu/sqljdbc_12.2/enu/mssql-jdbc-12.2.0.jre11.jar",
+    "last_opened_file_path": "D:/BT/PTTK/DoAn/jcalendar-1.4.jar",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -102,7 +123,21 @@
       <option name="project" value="LOCAL" />
       <updated>1679146480615</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add get panel">
+      <created>1681522103184</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1681522103184</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add try catch">
+      <created>1681872322544</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1681872322544</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -110,7 +145,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -118,7 +165,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="QL ban sach" />
-    <option name="LAST_COMMIT_MESSAGE" value="QL ban sach" />
+    <MESSAGE value="add get panel" />
+    <MESSAGE value="add try catch" />
+    <option name="LAST_COMMIT_MESSAGE" value="add try catch" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -127,11 +176,6 @@
           <url>file://$PROJECT_DIR$/src/DAO/ThongKe_DAO.java</url>
           <line>36</line>
           <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/GUI/CT_NH_GUI.java</url>
-          <line>244</line>
-          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

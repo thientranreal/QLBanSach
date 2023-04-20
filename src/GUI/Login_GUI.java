@@ -67,6 +67,7 @@ public class Login_GUI extends JFrame {
             JCheckBox chkremember = new JCheckBox("Show password");
             chkremember.setFocusable(false);
             chkremember.setAlignmentX(Component.CENTER_ALIGNMENT);
+            chkremember.setBackground(new Color(250, 238, 232));
             chkremember.addItemListener(new ItemListener() {
                 @Override
                 public void itemStateChanged(ItemEvent e) {
@@ -82,8 +83,12 @@ public class Login_GUI extends JFrame {
             btnLogin.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    String username = txtusername.getText();
+                    String username = txtusername.getText().trim();
                     String password  = new String(txtpassword.getPassword());
+                    if(username.equals("")||password.equals("")){
+                        JOptionPane.showMessageDialog(null, "Vui lòng nhập đầy đủ thông tin");
+                    return;
+                    }
                     NhanVien_DTO dto =BUS.NhanVien_BUS.getInstance().getNhanVienByUsernameAndPassword(username,password);
                     if(dto==null){
                         JOptionPane.showMessageDialog(null, "username hoặc password không hợp lệ");

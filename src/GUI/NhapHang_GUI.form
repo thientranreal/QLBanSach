@@ -13,7 +13,9 @@
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <background color="-332056"/>
+        </properties>
         <border type="none"/>
         <children>
           <grid id="efd88" binding="title_panel" layout-manager="GridLayoutManager" row-count="2" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -21,17 +23,11 @@
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-332056"/>
+            </properties>
             <border type="none"/>
             <children>
-              <component id="c7784" class="javax.swing.JLabel" binding="title_lb">
-                <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <text value="Quản lý nhập hàng"/>
-                </properties>
-              </component>
               <hspacer id="907ae">
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
@@ -42,6 +38,14 @@
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
                 </constraints>
               </vspacer>
+              <component id="f271f" class="javax.swing.JLabel">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Quản lý nhập hàng"/>
+                </properties>
+              </component>
             </children>
           </grid>
           <grid id="2fa90" binding="info_wrapper" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -49,7 +53,9 @@
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-332056"/>
+            </properties>
             <border type="none"/>
             <children>
               <grid id="4bfad" binding="col_1" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -57,7 +63,9 @@
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
-                <properties/>
+                <properties>
+                  <background color="-332056"/>
+                </properties>
                 <border type="none"/>
                 <children>
                   <grid id="ec74" binding="show_info" layout-manager="GridLayoutManager" row-count="9" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -65,7 +73,9 @@
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
-                    <properties/>
+                    <properties>
+                      <background color="-332056"/>
+                    </properties>
                     <border type="none"/>
                     <children>
                       <component id="98cd9" class="javax.swing.JLabel" binding="HDId_lb">
@@ -177,7 +187,9 @@
                         <constraints>
                           <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                         </constraints>
-                        <properties/>
+                        <properties>
+                          <background color="-332056"/>
+                        </properties>
                         <border type="none"/>
                         <children>
                           <component id="35f67" class="javax.swing.JTextField" binding="day_txt">
@@ -242,7 +254,9 @@
                         <constraints>
                           <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                         </constraints>
-                        <properties/>
+                        <properties>
+                          <background color="-332056"/>
+                        </properties>
                         <border type="none"/>
                         <children>
                           <component id="71110" class="javax.swing.JTextField" binding="hour_txt">
@@ -297,7 +311,9 @@
                         <constraints>
                           <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                         </constraints>
-                        <properties/>
+                        <properties>
+                          <background color="-332056"/>
+                        </properties>
                         <border type="none"/>
                         <children>
                           <component id="e7aca" class="javax.swing.JButton" binding="generate_dtime_btn">
@@ -305,6 +321,7 @@
                               <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                             </constraints>
                             <properties>
+                              <background color="-1"/>
                               <text value="Tạo ngày giờ"/>
                             </properties>
                           </component>
@@ -318,6 +335,7 @@
                               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                             </constraints>
                             <properties>
+                              <background color="-1"/>
                               <text value="Lấy ngày giờ hiện tại"/>
                             </properties>
                           </component>
@@ -337,7 +355,9 @@
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
-                <properties/>
+                <properties>
+                  <background color="-332056"/>
+                </properties>
                 <border type="none"/>
                 <children>
                   <grid id="47eb3" binding="search_panel" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -345,7 +365,9 @@
                     <constraints>
                       <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
-                    <properties/>
+                    <properties>
+                      <background color="-332056"/>
+                    </properties>
                     <border type="none"/>
                     <children>
                       <component id="cc6d2" class="javax.swing.JComboBox" binding="search_type">
@@ -391,7 +413,9 @@
                     <constraints>
                       <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                     </constraints>
-                    <properties/>
+                    <properties>
+                      <background color="-332056"/>
+                    </properties>
                     <border type="none"/>
                     <children>
                       <scrollpane id="8210c">
@@ -414,7 +438,9 @@
                         <constraints>
                           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                         </constraints>
-                        <properties/>
+                        <properties>
+                          <background color="-332056"/>
+                        </properties>
                         <border type="none"/>
                         <children>
                           <component id="78342" class="javax.swing.JButton" binding="update_btn">
@@ -422,6 +448,7 @@
                               <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                             </constraints>
                             <properties>
+                              <background color="-1"/>
                               <text value="Sửa thông tin nhập"/>
                             </properties>
                           </component>
@@ -435,6 +462,7 @@
                               <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                             </constraints>
                             <properties>
+                              <background color="-1"/>
                               <text value="Xóa nhập hàng"/>
                             </properties>
                           </component>
@@ -443,6 +471,7 @@
                               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
                             </constraints>
                             <properties>
+                              <background color="-1"/>
                               <text value="Thêm nhập hàng"/>
                             </properties>
                           </component>
@@ -459,7 +488,9 @@
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
-            <properties/>
+            <properties>
+              <background color="-332056"/>
+            </properties>
             <border type="none"/>
             <children>
               <grid id="e8511" binding="searchCus_panel" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -467,7 +498,9 @@
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
-                <properties/>
+                <properties>
+                  <background color="-332056"/>
+                </properties>
                 <border type="none"/>
                 <children>
                   <component id="6d2b7" class="javax.swing.JTextField" binding="sCus_txt">
@@ -489,7 +522,9 @@
                     <children>
                       <component id="cc054" class="javax.swing.JList" binding="sCus_result">
                         <constraints/>
-                        <properties/>
+                        <properties>
+                          <model/>
+                        </properties>
                       </component>
                     </children>
                   </scrollpane>
@@ -500,7 +535,9 @@
                 <constraints>
                   <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
                 </constraints>
-                <properties/>
+                <properties>
+                  <background color="-332056"/>
+                </properties>
                 <border type="none"/>
                 <children>
                   <component id="192a2" class="javax.swing.JTextField" binding="sEm_txt">

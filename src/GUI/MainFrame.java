@@ -2,7 +2,6 @@ package GUI;
 
 import BUS.PhanQuyen_BUS;
 import DTO.NhanVien_DTO;
-import com.sun.tools.javac.Main;
 
 import javax.swing.*;
 import java.awt.*;
@@ -35,14 +34,48 @@ public class MainFrame extends JFrame {
         Init();this.account = account;
         listchucnang = PhanQuyen_BUS.getInstance().getChucNang(this.account.getMaquyen());
     }
+    public void changetoCTHD(CT_HD_GUI ctHdGui){
+
+        content.removeAll();
+        content.add(ctHdGui.getPanel());
+        content.revalidate();
+        content.repaint();
+    }
+    public void changetoCTNhapHang(CT_NH_GUI ctnhGui){
+        content.removeAll();
+        content.add(ctnhGui.getPanel());
+        content.revalidate();
+        content.repaint();
+    }
+    public void changetoNhapHang(JFrame frame){
+        content.removeAll();
+        content.add(new NhapHang_GUI(MainFrame.getInstance(account)).getNhapHang_pnl());
+        content.revalidate();
+        content.repaint();
+        frame.dispose();
+    }
+    public void changetoHoaDon(JFrame cthdframe){
+        content.removeAll();
+        content.add(new HoaDon_GUI(MainFrame.getInstance(account)).getHoaDon_pnl());
+        content.revalidate();
+        content.repaint();
+        cthdframe.dispose();
+    }
     public void clearColor(){
         QLSach.setBackground(new Color(250, 238, 232));
+        QLSach.setForeground(Color.BLACK);
         QLHD.setBackground(new Color(250, 238, 232));
+        QLHD.setForeground(Color.BLACK);
         QLNhapHang.setBackground(new Color(250, 238, 232));
+        QLNhapHang.setForeground(Color.BLACK);
         QLKhachHang.setBackground(new Color(250, 238, 232));
+        QLKhachHang.setForeground(Color.BLACK);
         QLThongKe.setBackground(new Color(250, 238, 232));
+        QLThongKe.setForeground(Color.BLACK);
         QLNhanVien.setBackground(new Color(250, 238, 232));
+        QLNhanVien.setForeground(Color.BLACK);
         PhanQuyen.setBackground(new Color(250, 238, 232));
+        PhanQuyen.setForeground(Color.BLACK);
     }
     public void Init(){
         Image image = new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB);
@@ -63,9 +96,13 @@ public class MainFrame extends JFrame {
         header.setBackground(new Color(250, 238, 232));
         JPanel eastheader = new JPanel();
         eastheader.setLayout(new FlowLayout(FlowLayout.RIGHT));
+
+
         JButton btnclose = new JButton("X");
+
         btnclose.setFocusable(false);
         btnclose.setBackground(new Color(250, 238, 232));
+
         eastheader.add(btnclose);
         eastheader.setBackground(new Color(250, 238, 232));
         btnclose.addActionListener(new ActionListener() {
@@ -77,7 +114,7 @@ public class MainFrame extends JFrame {
             }
         });
 
-        JLabel lbtitle = new JLabel("   Quản lý bán sách");
+        JLabel lbtitle = new JLabel("             Quản lý bán sách");
         lbtitle.setFont(new Font(Font.SANS_SERIF,Font.BOLD,30));
         lbtitle.setHorizontalAlignment(JLabel.CENTER);
         header.add(eastheader,BorderLayout.EAST);
@@ -104,6 +141,7 @@ public class MainFrame extends JFrame {
                    content.repaint();
                    clearColor();
                    QLSach.setBackground(new Color(141, 109, 99));
+                   QLSach.setForeground(Color.WHITE);
                 }else{
                     JOptionPane.showMessageDialog(null, "Bạn không có quyền truy cập vào chức năng này");
                 }
@@ -125,6 +163,7 @@ public class MainFrame extends JFrame {
                     content.repaint();
                     clearColor();
                     QLHD.setBackground(new Color(141, 109, 99));
+                    QLHD.setForeground(Color.WHITE);
                 }else{
                     JOptionPane.showMessageDialog(null, "Bạn không có quyền truy cập vào chức năng này");
                 }
@@ -144,6 +183,7 @@ public class MainFrame extends JFrame {
                     content.repaint();
                     clearColor();
                     QLNhapHang.setBackground(new Color(141, 109, 99));
+                    QLNhapHang.setForeground(Color.WHITE);
                 }else{
                     JOptionPane.showMessageDialog(null, "Bạn không có quyền truy cập vào chức năng này");
                 }
@@ -164,6 +204,7 @@ public class MainFrame extends JFrame {
                     content.repaint();
                     clearColor();
                     QLKhachHang.setBackground(new Color(141, 109, 99));
+                    QLKhachHang.setForeground(Color.WHITE);
                 }else{
                     JOptionPane.showMessageDialog(null, "Bạn không có quyền truy cập vào chức năng này");
                 }
@@ -184,6 +225,7 @@ public class MainFrame extends JFrame {
                     content.repaint();
                     clearColor();
                     QLThongKe.setBackground(new Color(141, 109, 99));
+                    QLThongKe.setForeground(Color.WHITE);
                 }else{
                     JOptionPane.showMessageDialog(null, "Bạn không có quyền truy cập vào chức năng này");
                 }
@@ -204,6 +246,7 @@ public class MainFrame extends JFrame {
                     content.repaint();
                     clearColor();
                     QLNhanVien.setBackground(new Color(141, 109, 99));
+                    QLNhanVien.setForeground(Color.WHITE);
                 }else{
                     JOptionPane.showMessageDialog(null, "Bạn không có quyền truy cập vào chức năng này");
                 }
@@ -225,6 +268,7 @@ public class MainFrame extends JFrame {
                     content.repaint();
                     clearColor();
                     PhanQuyen.setBackground(new Color(141, 109, 99));
+                    PhanQuyen.setForeground(Color.WHITE);
                 }else{
                     JOptionPane.showMessageDialog(null, "Bạn không có quyền truy cập vào chức năng này");
                 }

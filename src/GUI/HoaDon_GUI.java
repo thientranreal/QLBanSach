@@ -75,7 +75,7 @@ public class HoaDon_GUI {
     private static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
     private static DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 
-    public HoaDon_GUI(JFrame frame) {
+    public HoaDon_GUI(MainFrame frame) {
 //        JFrame frame = new JFrame("Quản lý hóa đơn");
 //        frame.add(HoaDon_panel);
 //        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -153,7 +153,6 @@ public class HoaDon_GUI {
                 search_result.setModel(lModel);
             }
         });
-
 //        Input listener for search input
         search_input.addKeyListener(new KeyAdapter() {
             @Override
@@ -229,7 +228,7 @@ public class HoaDon_GUI {
                         cusName = "";
                     }
                     String orderDate = HoaDon_table.getValueAt(row, 5).toString();
-                    new CT_HD_GUI(orderId, emId, emName, cusId, cusName, orderDate, frame);
+                    frame.changetoCTHD(new CT_HD_GUI(orderId, emId, emName, cusId, cusName, orderDate,frame));
                 }
             }
         });

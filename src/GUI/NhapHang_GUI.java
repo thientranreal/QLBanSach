@@ -18,7 +18,6 @@ import java.util.ArrayList;
 
 public class NhapHang_GUI {
     private JPanel HoaDon_panel;
-    private JLabel title_lb;
     private JPanel title_panel;
     private JPanel info_wrapper;
     private JTable HoaDon_table;
@@ -76,7 +75,7 @@ public class NhapHang_GUI {
     private static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
     private static DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
 
-    public NhapHang_GUI(JFrame frame) {
+    public NhapHang_GUI(MainFrame frame) {
 //        JFrame frame = new JFrame("Quản lý nhập hàng");
 //        frame.add(HoaDon_panel);
 //        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -230,7 +229,7 @@ public class NhapHang_GUI {
                         cusName = "";
                     }
                     String orderDate = HoaDon_table.getValueAt(row, 5).toString();
-                    new CT_NH_GUI(orderId, emId, emName, cusId, cusName, orderDate, frame);
+                    frame.changetoCTNhapHang(new CT_NH_GUI(orderId, emId, emName, cusId, cusName, orderDate, frame));
                 }
             }
         });
@@ -512,6 +511,7 @@ public class NhapHang_GUI {
             }
         });
 //        End add update event for update button
+
     }
 
     public JPanel getNhapHang_pnl() {

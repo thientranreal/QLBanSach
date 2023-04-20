@@ -22,7 +22,6 @@ public class CT_NH_GUI {
     private JPanel header;
     private JPanel TTChung;
     private JPanel TTSP;
-    private JLabel header_lb;
     private JTable CT_HD_table;
     private JPanel col_1;
     private JPanel col_2;
@@ -69,13 +68,17 @@ public class CT_NH_GUI {
     private JLabel stock_lb;
     private JButton printOrder_btn;
     private JPanel Button_Pnl;
+    private JButton button1;
     private static ArrayList<CT_HD_ShowTable_DTO> list;
     private static ArrayList<CT_HD_Product_DTO> products;
     private static CT_NH_BUS busCTHD = new CT_NH_BUS();
     private ArrayList<CT_HD_Product_DTO> productsTemp;
+    public JPanel getPanel(){
+        return CT_HD_panel;
+    }
 
-    public CT_NH_GUI(String orderID, String emId, String emName, String cusId, String cusName, String orderDate, JFrame fatherFrame) {
-        fatherFrame.setVisible(false);
+    public CT_NH_GUI(String orderID, String emId, String emName, String cusId, String cusName, String orderDate, MainFrame fatherFrame) {
+
         JFrame frame = new JFrame("Quản lý chi tiết nhập hàng");
 
 //      Add window closing event
@@ -83,7 +86,7 @@ public class CT_NH_GUI {
             @Override
             public void windowClosing(WindowEvent e) {
                 super.windowClosing(e);
-                fatherFrame.setVisible(true);
+
             }
         });
 
@@ -152,7 +155,7 @@ public class CT_NH_GUI {
         pro_name_ls.setVisibleRowCount(4);
 
         frame.pack();
-        frame.setVisible(true);
+
         frame.setLocationRelativeTo(null);
 
         // Event listener==============================================================================
@@ -413,6 +416,12 @@ public class CT_NH_GUI {
             }
         });
 //        End Print order click listener
+        button1.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                fatherFrame.changetoNhapHang(frame);
+            }
+        });
     }
 
     private void loadCT_HD_Table(String[] columns) {

@@ -173,7 +173,7 @@ public class HoaDon_GUI {
 
                 for (HD_DTO item : hoaDonList) {
                     element = item.getByIndex(index);
-                    if (element.contains(search)) {
+                    if (element != null && element.contains(search)) {
                         lModel.addElement(element);
                     }
                 }

@@ -86,4 +86,27 @@ public class HD_DTO {
                 return "N/A";
         }
     }
+
+    public void setByIndex(int index, String str) {
+        switch (index) {
+            case 0:
+                setOrderID(str);
+                break;
+            case 1:
+                setEmployeeID(str);
+                break;
+            case 2:
+                setEmployeeName(str);
+                break;
+            case 3:
+                setCustomerID(str);
+                break;
+            case 4:
+                setCustomerName(str);
+                break;
+            case 5:
+                setOrderDate(str);
+                break;
+        }
+    }
 }

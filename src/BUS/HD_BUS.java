@@ -8,15 +8,7 @@ import java.util.ArrayList;
 public class HD_BUS {
     private static HD_DAO hdDao = new HD_DAO();
     public ArrayList<HD_DTO> getAllOrders() {
-        ArrayList<HD_DTO> result = hdDao.getAllOrders();
-        for (HD_DTO item : result) {
-            for (int i=0; i<6; i++) {
-                if (item.getByIndex(i) == null) {
-                    item.setByIndex(i, "");
-                }
-            }
-        }
-        return result;
+        return hdDao.getAllOrders();
     }
     public int addNewHD(String OrderId, String emId, String cusId, String dateTime) {
         return hdDao.addNewHD(OrderId, emId, cusId, dateTime);

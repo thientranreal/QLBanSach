@@ -92,14 +92,10 @@ public class Login_GUI extends JFrame {
                     NhanVien_DTO dto =BUS.NhanVien_BUS.getInstance().getNhanVienByUsernameAndPassword(username,password);
                     if(dto==null){
                         JOptionPane.showMessageDialog(null, "username hoặc password không hợp lệ");
-
                     }else{
                         setVisible(false);
                         MainFrame.getInstance(dto).setVisible(true);
                     }
-
-
-
                 }
             });
             btnLogin.setAlignmentX(Component.CENTER_ALIGNMENT);

@@ -163,17 +163,17 @@ public class HoaDon_GUI {
                     return;
                 }
 //                if input is empty then load all data to Hoa Don table
-                if (search_input.getText().equals("")) {
+                if (search_input.getText().trim().equals("")) {
                     loadTableModel(HoaDon_table, columns, hoaDonList);
                 }
 
 //                Add matching string to search result list
                 DefaultListModel<String> lModel = new DefaultListModel<>();
-                String search = search_input.getText(), element;
+                String search = search_input.getText().trim(), element;
 
                 for (HD_DTO item : hoaDonList) {
                     element = item.getByIndex(index);
-                    if (element != null && element.contains(search)) {
+                    if (element.contains(search)) {
                         lModel.addElement(element);
                     }
                 }
@@ -250,14 +250,14 @@ public class HoaDon_GUI {
                         day_txt.getText().trim());
 
 //                add zero in front of time
-                if(hour_txt.getText().length() == 1) {
-                    hour_txt.setText("0" + hour_txt.getText());
+                if(hour_txt.getText().trim().length() == 1) {
+                    hour_txt.setText("0" + hour_txt.getText().trim());
                 }
-                if(minute_txt.getText().length() == 1) {
-                    minute_txt.setText("0" + minute_txt.getText());
+                if(minute_txt.getText().trim().length() == 1) {
+                    minute_txt.setText("0" + minute_txt.getText().trim());
                 }
-                if(second_txt.getText().length() == 1) {
-                    second_txt.setText("0" + second_txt.getText());
+                if(second_txt.getText().trim().length() == 1) {
+                    second_txt.setText("0" + second_txt.getText().trim());
                 }
                 String time = String.format("%s:%s:%s",
                         hour_txt.getText().trim(),
@@ -347,7 +347,7 @@ public class HoaDon_GUI {
             @Override
             public void keyReleased(KeyEvent e) {
                 super.keyReleased(e);
-                String searchStr = sCus_txt.getText();
+                String searchStr = sCus_txt.getText().trim();
 //                Empty list for search data
                 customersTemp = new ArrayList<>();
                 for (String item : customers) {
@@ -367,7 +367,7 @@ public class HoaDon_GUI {
             @Override
             public void keyReleased(KeyEvent e) {
                 super.keyReleased(e);
-                String searchStr = sEm_txt.getText();
+                String searchStr = sEm_txt.getText().trim();
 //                Empty list for search data
                 employeesTemp = new ArrayList<>();
                 for (String item : employees) {

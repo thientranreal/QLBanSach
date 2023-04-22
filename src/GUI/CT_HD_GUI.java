@@ -216,17 +216,17 @@ public class CT_HD_GUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // string processing
-                product_id_txt.setText(product_id_txt.getText().trim().toUpperCase());
+                product_id_txt.setText(product_id_txt.getText().trim().trim().toUpperCase());
 
                 // check empty for product id txt
-                if (product_id_txt.getText().equals("")) {
+                if (product_id_txt.getText().trim().trim().equals("")) {
                     JOptionPane.showMessageDialog(frame, "Không được bỏ trống Mã sản phẩm",
                             "Error", JOptionPane.ERROR_MESSAGE);
                     product_id_txt.grabFocus();
                     return;
                 }
                 // check if product exists in product table
-                if (!isProductExist(product_id_txt.getText())) {
+                if (!isProductExist(product_id_txt.getText().trim().trim())) {
                     JOptionPane.showMessageDialog(frame, "Mã sản phẩm không tồn tại",
                             "Error", JOptionPane.ERROR_MESSAGE);
                     product_id_txt.grabFocus();
@@ -235,7 +235,7 @@ public class CT_HD_GUI {
                 int sl;
                 // check sl is a number or not
                 try {
-                    sl = Integer.parseInt(product_quantity_txt.getText());
+                    sl = Integer.parseInt(product_quantity_txt.getText().trim().trim());
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(frame, "Số lượng phải là số nguyên", "Error", JOptionPane.ERROR_MESSAGE);
                     product_quantity_txt.grabFocus();
@@ -249,7 +249,7 @@ public class CT_HD_GUI {
                 }
 
                 // check if that product is still available or not
-                int slConLai = Integer.parseInt(stock_txt.getText()) - sl;
+                int slConLai = Integer.parseInt(stock_txt.getText().trim().trim()) - sl;
                 if (slConLai < 0) {
                     JOptionPane.showMessageDialog(frame, "Số lượng kho không đủ", "Error", JOptionPane.ERROR_MESSAGE);
                     product_quantity_txt.grabFocus();
@@ -258,12 +258,12 @@ public class CT_HD_GUI {
 
                 int updatedRow;
                 // update product quantity
-                if (isProductExistInOrder(product_id_txt.getText())) {
+                if (isProductExistInOrder(product_id_txt.getText().trim().trim())) {
 //                kiem tra so luong giam khong vuot qua so luong mua
                     int slHienTai = -99999;
 //                    Lay so luong hien tai cua san pham
                     for (CT_HD_ShowTable_DTO item : list) {
-                        if (item.getProductID().equals(product_id_txt.getText())) {
+                        if (item.getProductID().equals(product_id_txt.getText().trim().trim())) {
                             slHienTai = item.getQuantity();
                             break;
                         }
@@ -277,13 +277,13 @@ public class CT_HD_GUI {
 
                     // find sl cu in list then add to sl moi
                     for (CT_HD_ShowTable_DTO item : list) {
-                        if (item.getProductID().equals(product_id_txt.getText())) {
+                        if (item.getProductID().equals(product_id_txt.getText().trim().trim())) {
                             sl = item.getQuantity() + sl;
                             break;
                         }
                     }
 
-                    updatedRow = busCTHD.updateSLByProOrderId(product_id_txt.getText(), order_id_txt.getText(), sl);
+                    updatedRow = busCTHD.updateSLByProOrderId(product_id_txt.getText().trim().trim(), order_id_txt.getText().trim().trim(), sl);
                     JOptionPane.showMessageDialog(frame, String.format("Cập nhập thành công %d dòng", updatedRow),
                             "Updated", JOptionPane.INFORMATION_MESSAGE);
                 } // add new product to order detail
@@ -295,13 +295,13 @@ public class CT_HD_GUI {
                         return;
                     }
 
-                    updatedRow = busCTHD.addNewCT_HD(product_id_txt.getText(), order_id_txt.getText(), sl);
+                    updatedRow = busCTHD.addNewCT_HD(product_id_txt.getText().trim().trim(), order_id_txt.getText().trim().trim(), sl);
                     JOptionPane.showMessageDialog(frame, String.format("Thêm thành công %d dòng", updatedRow),
                             "Updated", JOptionPane.INFORMATION_MESSAGE);
                 }
 
                 // update stock in Product
-                busCTHD.updateProductStock(product_id_txt.getText(), slConLai);
+                busCTHD.updateProductStock(product_id_txt.getText().trim().trim(), slConLai);
 
                 // Load updated data to CT_HD_table, load updated product to products
                 loadDataDisplay(orderID, columns);
@@ -314,17 +314,17 @@ public class CT_HD_GUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // string processing
-                product_id_txt.setText(product_id_txt.getText().trim().toUpperCase());
+                product_id_txt.setText(product_id_txt.getText().trim().trim().toUpperCase());
 
                 // check empty for product id txt
-                if (product_id_txt.getText().equals("")) {
+                if (product_id_txt.getText().trim().trim().equals("")) {
                     JOptionPane.showMessageDialog(frame, "Không được bỏ trống Mã sản phẩm",
                             "Error", JOptionPane.ERROR_MESSAGE);
                     product_id_txt.grabFocus();
                     return;
                 }
                 // check if product exists in product table
-                if (!isProductExistInOrder(product_id_txt.getText())) {
+                if (!isProductExistInOrder(product_id_txt.getText().trim())) {
                     JOptionPane.showMessageDialog(frame, "Mã sản phẩm không tồn tại",
                             "Error", JOptionPane.ERROR_MESSAGE);
                     product_id_txt.grabFocus();
@@ -332,17 +332,17 @@ public class CT_HD_GUI {
                 }
 
                 // update product stock
-                int sl = Integer.parseInt(stock_txt.getText());
+                int sl = Integer.parseInt(stock_txt.getText().trim());
                 for (CT_HD_ShowTable_DTO item : list) {
-                    if (item.getProductID().equals(product_id_txt.getText())) {
+                    if (item.getProductID().equals(product_id_txt.getText().trim())) {
                         sl = sl + item.getQuantity();
                         break;
                     }
                 }
                 // add deleted quantity back to stock
-                busCTHD.updateProductStock(product_id_txt.getText(), sl);
+                busCTHD.updateProductStock(product_id_txt.getText().trim(), sl);
 
-                int updateRow = busCTHD.deleteProduct(order_id_txt.getText(), product_id_txt.getText());
+                int updateRow = busCTHD.deleteProduct(order_id_txt.getText().trim(), product_id_txt.getText().trim());
                 JOptionPane.showMessageDialog(frame, String.format("Xóa thành công %d dòng", updateRow),
                         "Updated", JOptionPane.INFORMATION_MESSAGE);
 
@@ -356,7 +356,7 @@ public class CT_HD_GUI {
             @Override
             public void keyReleased(KeyEvent e) {
                 super.keyReleased(e);
-                String proId = product_id_txt.getText();
+                String proId = product_id_txt.getText().trim();
 
 //                Empty productsTemp for storing new search data
                 productsTemp = new ArrayList<>();
@@ -376,7 +376,7 @@ public class CT_HD_GUI {
             @Override
             public void keyReleased(KeyEvent e) {
                 super.keyReleased(e);
-                String proName = product_name_txt.getText();
+                String proName = product_name_txt.getText().trim();
 
 //                Empty productsTemp for storing new search data
                 productsTemp = new ArrayList<>();
@@ -510,12 +510,12 @@ public class CT_HD_GUI {
         String generalInfo = String.format("Mã HD: %s\n" +
                         "Ngày bán: %s\n" +
                         "Thông tin nhân viên: %s-%s\n" +
-                        "Thông tin khách hàng: %s-%s\n", order_id_txt.getText(),
-                order_date_txt.getText(),
-                emp_id_txt.getText(),
-                emp_name_txt.getText(),
-                cus_id_txt.getText(),
-                cus_name_txt.getText());
+                        "Thông tin khách hàng: %s-%s\n", order_id_txt.getText().trim(),
+                order_date_txt.getText().trim(),
+                emp_id_txt.getText().trim(),
+                emp_name_txt.getText().trim(),
+                cus_id_txt.getText().trim(),
+                cus_name_txt.getText().trim());
         String productHeader = String.format("%-8s%-30s%-8s%-15s\n", "Mã SP", "Tên SP", "SL", "Đơn giá");
         String productList = "";
         for (CT_HD_ShowTable_DTO item: list) {
@@ -524,7 +524,7 @@ public class CT_HD_GUI {
                     item.getQuantity(),
                     item.getPrice());
         }
-        String thanhTien = "Thành tiền: " + total_price_txt.getText();
+        String thanhTien = "Thành tiền: " + total_price_txt.getText().trim();
         return title + separator + generalInfo + separator +
                 productHeader + productList + separator + thanhTien;
     }

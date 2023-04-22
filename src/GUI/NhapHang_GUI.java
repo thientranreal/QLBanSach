@@ -164,13 +164,13 @@ public class NhapHang_GUI {
                     return;
                 }
 //                if input is empty then load all data to Hoa Don table
-                if (search_input.getText().equals("")) {
+                if (search_input.getText().trim().equals("")) {
                     loadTableModel(HoaDon_table, columns, hoaDonList);
                 }
 
 //                Add matching string to search result list
                 DefaultListModel<String> lModel = new DefaultListModel<>();
-                String search = search_input.getText(), element;
+                String search = search_input.getText().trim(), element;
 
                 for (HD_DTO item : hoaDonList) {
                     element = item.getByIndex(index);
@@ -246,24 +246,24 @@ public class NhapHang_GUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String date = String.format("%s-%s-%s",
-                        year_txt.getText().trim(),
-                        month_txt.getText().trim(),
-                        day_txt.getText().trim());
+                        year_txt.getText().trim().trim(),
+                        month_txt.getText().trim().trim(),
+                        day_txt.getText().trim().trim());
 
 //                add zero in front of time
-                if(hour_txt.getText().length() == 1) {
-                    hour_txt.setText("0" + hour_txt.getText());
+                if(hour_txt.getText().trim().length() == 1) {
+                    hour_txt.setText("0" + hour_txt.getText().trim());
                 }
-                if(minute_txt.getText().length() == 1) {
-                    minute_txt.setText("0" + minute_txt.getText());
+                if(minute_txt.getText().trim().length() == 1) {
+                    minute_txt.setText("0" + minute_txt.getText().trim());
                 }
-                if(second_txt.getText().length() == 1) {
-                    second_txt.setText("0" + second_txt.getText());
+                if(second_txt.getText().trim().length() == 1) {
+                    second_txt.setText("0" + second_txt.getText().trim());
                 }
                 String time = String.format("%s:%s:%s",
-                        hour_txt.getText().trim(),
-                        minute_txt.getText().trim(),
-                        second_txt.getText().trim());
+                        hour_txt.getText().trim().trim(),
+                        minute_txt.getText().trim().trim(),
+                        second_txt.getText().trim().trim());
 
 //                check if date is valid
                 try {
@@ -274,7 +274,7 @@ public class NhapHang_GUI {
                             "Error", JOptionPane.ERROR_MESSAGE);
                     return;
                 }
-                if (Integer.parseInt(year_txt.getText().trim()) < 2000) {
+                if (Integer.parseInt(year_txt.getText().trim().trim()) < 2000) {
                     JOptionPane.showMessageDialog(frame, "Năm không hợp lệ",
                             "Error", JOptionPane.ERROR_MESSAGE);
                     return;
@@ -294,10 +294,10 @@ public class NhapHang_GUI {
         add_btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String orderId = HDId_txt.getText().trim();
-                String emId = emID_txt.getText().trim();
-                String cusId = cusId_txt.getText().trim();
-                String orderDate = orderDate_txt.getText().trim();
+                String orderId = HDId_txt.getText().trim().trim();
+                String emId = emID_txt.getText().trim().trim();
+                String cusId = cusId_txt.getText().trim().trim();
+                String orderDate = orderDate_txt.getText().trim().trim();
 
 //                Check input data
                 if (orderId.equals("")) {
@@ -348,7 +348,7 @@ public class NhapHang_GUI {
             @Override
             public void keyReleased(KeyEvent e) {
                 super.keyReleased(e);
-                String searchStr = sCus_txt.getText();
+                String searchStr = sCus_txt.getText().trim();
 //                Empty list for search data
                 customersTemp = new ArrayList<>();
                 for (String item : customers) {
@@ -368,7 +368,7 @@ public class NhapHang_GUI {
             @Override
             public void keyReleased(KeyEvent e) {
                 super.keyReleased(e);
-                String searchStr = sEm_txt.getText();
+                String searchStr = sEm_txt.getText().trim();
 //                Empty list for search data
                 employeesTemp = new ArrayList<>();
                 for (String item : employees) {
@@ -423,7 +423,7 @@ public class NhapHang_GUI {
         rm_btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String orderId = HDId_txt.getText().trim();
+                String orderId = HDId_txt.getText().trim().trim();
                 if (orderId.equals("")) {
                     JOptionPane.showMessageDialog(frame, "Không được bỏ trống mã hóa đơn",
                             "Error", JOptionPane.ERROR_MESSAGE);
@@ -463,10 +463,10 @@ public class NhapHang_GUI {
         update_btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String orderId = HDId_txt.getText().trim();
-                String emId = emID_txt.getText().trim();
-                String cusId = cusId_txt.getText().trim();
-                String orderDate = orderDate_txt.getText().trim();
+                String orderId = HDId_txt.getText().trim().trim();
+                String emId = emID_txt.getText().trim().trim();
+                String cusId = cusId_txt.getText().trim().trim();
+                String orderDate = orderDate_txt.getText().trim().trim();
 
 //                Check input data
                 if (orderId.equals("")) {

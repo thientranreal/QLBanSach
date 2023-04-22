@@ -75,8 +75,16 @@ public class ThongKe_GUI {
 
 //       Load heading for JTable
         String[] columns = {"Mã SP", "Tên sản phẩm", "Số lượng bán", "Đơn giá", "Tổng tiền"};
-        DefaultTableModel tModel = new DefaultTableModel(null, columns);
+
+        DefaultTableModel tModel = new DefaultTableModel(null,columns) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
         show_table.setModel(tModel);
+        show_table.getSelectionModel()
+                .setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         show_table.setRowHeight(20);
 
 
@@ -103,7 +111,7 @@ public class ThongKe_GUI {
                 productListTemp = new ArrayList<>();
 //                find matching product from productList then add to productTemp
                 for (String item : productList) {
-                    if (item.contains(product_txt.getText())) {
+                    if (item.contains(product_txt.getText().trim())) {
                         productListTemp.add(item);
                     }
                 }
@@ -116,12 +124,12 @@ public class ThongKe_GUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String fromDate = String.format("%s-%s-%s",
-                        from_year_txt.getText().trim(),
+                        from_year_txt.getText().trim().trim(),
                         from_month_cb.getSelectedItem().toString().trim(),
                         from_day_cb.getSelectedItem().toString().trim());
 
                 String toDate = String.format("%s-%s-%s",
-                        to_year_txt.getText().trim(),
+                        to_year_txt.getText().trim().trim(),
                         to_month_cb.getSelectedItem().toString().trim(),
                         to_day_cb.getSelectedItem().toString().trim());
 
@@ -190,7 +198,13 @@ public class ThongKe_GUI {
 
 //    Load data to show table
     private void loadShowTable(JTable table, String[] columns, ArrayList<ThongKe_DTO> thongKeList) {
-        DefaultTableModel model = new DefaultTableModel(null, columns);
+
+       DefaultTableModel model = new DefaultTableModel(null,columns) {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
         byte i;
         Object[] rows = new Object[5];
 
@@ -218,10 +232,14 @@ public class ThongKe_GUI {
 
 //    Tính tổng doanh thu
     private float tinhTongDT() {
-        float sum = 0;
-        for (ThongKe_DTO item : thongKeList) {
-            sum += item.getTotalPrice();
+        try {
+            float sum = 0;
+            for (ThongKe_DTO item : thongKeList) {
+                sum += item.getTotalPrice();
+            }
+            return sum;
+        } catch (NullPointerException ex) {
+            return 0;
         }
-        return sum;
     }
 }

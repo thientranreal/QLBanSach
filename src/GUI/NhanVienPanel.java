@@ -6,6 +6,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
+import java.lang.reflect.Executable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import javax.swing.*;
@@ -173,6 +174,12 @@ public class NhanVienPanel extends JPanel {
 						  JOptionPane.showMessageDialog(null, "Đã tồn tại username");
 						  return;
 					  }
+					  try{
+						  int n = Integer.parseInt(txtsdt.getText().trim());
+					  }catch(Exception ex){
+						  JOptionPane.showMessageDialog(null,"SDT không được chứa bất kỳ ký tự nào");
+						  return;
+					 }
 					  if(txtsdt.getText().trim().length()!=10){
 						  JOptionPane.showMessageDialog(null, "SDT phải 10 chữ số");
 						  return;
@@ -209,6 +216,12 @@ public class NhanVienPanel extends JPanel {
 						  JOptionPane.showMessageDialog(null,"Không được thay đổi username");
 						  return;
 					  }
+					try{
+						int n = Integer.parseInt(txtsdt.getText().trim());
+					}catch(Exception ex){
+						JOptionPane.showMessageDialog(null,"SDT không được chứa bất kỳ ký tự nào");
+						return;
+					}
 					if(txtsdt.getText().trim().length()!=10){
 						JOptionPane.showMessageDialog(null, "SDT phải 10 chữ số");
 						return;

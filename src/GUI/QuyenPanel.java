@@ -107,19 +107,19 @@ public class QuyenPanel extends JPanel{
 		btnaddleft.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				if(txtmaquyen.getText().trim().equals("")||txttenquyen.getText().trim().equals("")){
+				if(txtmaquyen.getText().trim().trim().equals("")||txttenquyen.getText().trim().trim().equals("")){
 					JOptionPane.showMessageDialog(null,"Vui lòng điền đầy đủ thông tin");
 					return;
 				}
-				if(BUS.PhanQuyen_BUS.getInstance().isExists(txtmaquyen.getText().trim())){
+				if(BUS.PhanQuyen_BUS.getInstance().isExists(txtmaquyen.getText().trim().trim())){
 					JOptionPane.showMessageDialog(null,"Đã tồn tại quyền");
 				    return;
 				}
-				if(BUS.PhanQuyen_BUS.getInstance().isExistsTenQuyen(txttenquyen.getText().trim())){
+				if(BUS.PhanQuyen_BUS.getInstance().isExistsTenQuyen(txttenquyen.getText().trim().trim())){
 					JOptionPane.showMessageDialog(null,"Đã tồn tại tên quyền");
 					return ;
 				}
-                if(!BUS.PhanQuyen_BUS.getInstance().insert(txtmaquyen.getText().trim(),txttenquyen.getText().trim())) {
+                if(!BUS.PhanQuyen_BUS.getInstance().insert(txtmaquyen.getText().trim().trim(),txttenquyen.getText().trim().trim())) {
 					JOptionPane.showMessageDialog(null, "Thêm quyền thất bại");
 					return;
 				}

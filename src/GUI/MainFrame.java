@@ -136,7 +136,7 @@ public class MainFrame extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 if(listchucnang.contains("QLS")){
                    content.removeAll();
-                   content.add(new PanelSach().getPanelSach());
+                   content.add(new PanelSach());
                    content.revalidate();
                    content.repaint();
                    clearColor();
